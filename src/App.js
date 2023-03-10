@@ -19,7 +19,7 @@ const theme = createTheme({
 });
 
 function App() {
-  const [columns, setColumns] = React.useState(`1fr 5px 3fr`);
+  const [columns, setColumns] = React.useState(`1fr 5px 1fr`);
 
   const handleDrag = (direction, track, gridTemplateStyle) => {
     setColumns(gridTemplateStyle);
@@ -36,7 +36,7 @@ function App() {
             src={logo}
           />
           <Typography variant="h6" color="inherit" component="div" style={{ marginLeft: 16 }}>
-            Data Extractor
+            Regex Data Extractor
           </Typography>
         </Toolbar>
       </AppBar>
@@ -44,18 +44,22 @@ function App() {
         gridTemplateColumns={columns}
         onDrag={handleDrag}
         cursor="col-resize"
-        minSize= "300"
+        minSize="300"
         render={({ getGridProps, getGutterProps }) => (
           <div className="split-grid" {...getGridProps()}>
             <div className="split-column">
-                    COLUMN A (position 0)
+              <NamedPanel name="Fields Definitions">
+                aa
+              </NamedPanel>
             </div>
             <div
               className="gutter gutter-vertical"
               {...getGutterProps("column", 1)}
             />
             <div className="split-column">
-               COLUMN B (position 2)
+              <NamedPanel name="Tata">
+                
+              </NamedPanel>
             </div>
           </div>
         )}
