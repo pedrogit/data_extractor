@@ -9,6 +9,7 @@ import Split from 'react-split-grid'
 import logo from './logo_cef.gif';
 import './App.css';
 import NamedPanel from './NamedPanel';
+import FieldDefPanel from './FieldDefPanel';
 
 const theme = createTheme({
   palette: {
@@ -48,9 +49,7 @@ function App() {
         render={({ getGridProps, getGutterProps }) => (
           <div className="split-grid" {...getGridProps()}>
             <div className="split-column">
-              <NamedPanel name="Fields Definitions">
-                aa
-              </NamedPanel>
+            <FieldDefPanel/>
             </div>
             <div
               className="gutter gutter-vertical"
