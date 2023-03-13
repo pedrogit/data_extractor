@@ -10,7 +10,7 @@ function FieldRow(props) {
     <Stack direction="column" display="flex">
       <Stack direction="row" display="flex" justifyContent="space-between">
         <FieldName name="field1" />
-        <Button variant="contained" size="small" sx={{marginBottom: "5px"}}>Add Field</Button>
+        <Button variant="contained" size="small" sx={{marginBottom: "5px"}}>Add&nbsp;Field</Button>
       </Stack>
       <Stack direction="row" display="flex" spacing={1}>
         <FieldDelimiter type="start"/>

@@ -54,3 +54,7 @@
   overflow: auto;
   width: 100%;
 }
+
+.cm-editor, .cm-theme-light {
+  height: calc(100% - 23px);
+}

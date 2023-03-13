@@ -7,7 +7,7 @@ function DataInputPanel(props) {
     console.log('value:', value);
   }, []);
   return (
-    <NamedPanel name="Data Input">
+    <NamedPanel name="Data Input" sx={{height: "calc(100vh - 77px)"}}>
       <CodeMirror
         value="console.log('hello world!');"
         height="200px"
