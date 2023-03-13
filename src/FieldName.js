@@ -1,19 +1,17 @@
 import React from "react";
-import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
+import EditableLabel from "./EditableLabel";
 
-function FieldName(props) {
+function FieldName({name = "field1"}) {
+  const [text, setText] = React.useState("Click here to edit.");
+
   return (
-    <Stack direction="row" display="flex" sx={{width: "100%"}}>
-      <TextField 
-        id="filled-basic" 
-        xlabel="Field Name" 
-        variant="filled" 
-        size="small"
-        sx={{flexGrow: 2, marginRight: "2px"}}
-        inputProps={{style: {padding: 5}}}
-      />
-    </Stack>
+    <EditableLabel
+      initialValue={name}
+      xonFocus={(value) => console.log("on focus: ", value)}
+      xonBlur={(value) => {
+      //console.log("on blur: ", value);
+      setText(value || "default value");
+    }} />
   );
 }
 

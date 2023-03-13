@@ -5,18 +5,36 @@ import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Split from 'react-split-grid'
+import { green } from '@mui/material/colors';
 
 import logo from './logo_cef.gif';
 import './App.css';
 import NamedPanel from './NamedPanel';
 import FieldDefPanel from './FieldDefPanel';
+import PredefinedFieldsSetsPanel from './PredefinedFieldsSetsPanel';
+import CSVOutputPanel from './CSVOutputPanel';
+import DataInputPanel from './DataInputPanel';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#275A14"
-    }
-  }
+      main: green[800]
+    },
+    secondary: {
+      main: green[100],
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: '#000',
+          fontWeight: "bold",
+          backgroundColor: green[100]
+        },
+      },
+    },
+  },
 });
 
 function App() {
@@ -49,16 +67,16 @@ function App() {
         render={({ getGridProps, getGutterProps }) => (
           <div className="split-grid" {...getGridProps()}>
             <div className="split-column">
-            <FieldDefPanel/>
+              <FieldDefPanel />
+              <PredefinedFieldsSetsPanel />
+              <CSVOutputPanel />
             </div>
             <div
               className="gutter gutter-vertical"
               {...getGutterProps("column", 1)}
             />
             <div className="split-column">
-              <NamedPanel name="Tata">
-                
-              </NamedPanel>
+              <DataInputPanel />
             </div>
           </div>
         )}

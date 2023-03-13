@@ -10,7 +10,7 @@ function FieldDelimiter({typePreceding = true}) {
         placeholder={(true ? "Preceding" : "Following") + " Regex Delimiter"} 
         variant="filled" 
         size="small"
-        sx={{flexGrow: 2, marginRight: "2px"}}
+        sx={{flexGrow: 2}}
         inputProps={{style: {padding: 5}}}
       />
     </Stack>
