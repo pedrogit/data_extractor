@@ -36,7 +36,7 @@ function PredefinedFieldsSetsPanel(props) {
             native: true,
           }}
           variant="filled"
-          inputProps={{style: {padding: 4}}}
+          inputProps={{style: {padding: 4, backgroundColor: "white"}}}
         >
           {fieldsSetsArr.map((option) => (
             <option key={option.value} value={option.value}>

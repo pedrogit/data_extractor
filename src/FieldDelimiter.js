@@ -11,7 +11,7 @@ function FieldDelimiter({typePreceding = true}) {
         variant="filled" 
         size="small"
         sx={{flexGrow: 2}}
-        inputProps={{style: {padding: 5}}}
+        inputProps={{style: {padding: 5, backgroundColor: "white"}}}
       />
     </Stack>
   );

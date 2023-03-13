@@ -30,7 +30,7 @@ const theme = createTheme({
         root: {
           color: '#000',
           fontWeight: "bold",
-          backgroundColor: green[100]
+          backgroundColor: "white"
         },
       },
     },
@@ -66,18 +66,18 @@ function App() {
         minSize="300"
         render={({ getGridProps, getGutterProps }) => (
           <div className="split-grid" {...getGridProps()}>
-            <div className="split-column">
+            <Box className="split-column" sx={{backgroundColor: 'secondary.main'}}>
               <FieldDefPanel />
               <PredefinedFieldsSetsPanel />
               <CSVOutputPanel />
-            </div>
+            </Box>
             <div
               className="gutter gutter-vertical"
               {...getGutterProps("column", 1)}
             />
-            <div className="split-column">
+            <Box className="split-column" sx={{backgroundColor: 'secondary.main'}}>
               <DataInputPanel />
-            </div>
+            </Box>
           </div>
         )}
       />
