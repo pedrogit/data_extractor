@@ -2,30 +2,26 @@ import React from "react";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 
+import FieldName from './FieldName';
+import FieldDelimiter from './FieldDelimiter';
+import EditableLabel from "./EditableLabel";
+
 function FieldRow(props) {
+  const [text, setText] = React.useState("Click here to edit.");
+
   return (
-    <Stack direction="row" display="flex" sx={{width: "100%"}}>
-      <TextField 
-        id="filled-basic" 
-        label="Field Name" 
-        variant="filled" 
-        size="small"
-        sx={{flexGrow: 1, marginRight: "2px"}}
-      />
-      <TextField 
-        id="filled-basic" 
-        label="Regex Preceding Delimiter" 
-        variant="filled" 
-        size="small"
-        sx={{flexGrow: 2, marginRight: "2px"}}
-      />
-      <TextField 
-        id="filled-basic"
-        label="Regex Following Delimiter"
-        variant="filled"
-        size="small"
-        sx={{flexGrow: 2, marginRight: "2px"}}
-      />
+    <Stack direction="column" display="flex">
+      <EditableLabel
+        initialValue="field1"
+        xonFocus={(value) => console.log("on focus: ", value)}
+        xonBlur={(value) => {
+          //console.log("on blur: ", value);
+          setText(value || "default value");
+        }} />
+      <Stack direction="row" display="flex" sx={{ width: "100%" }}>
+        <FieldDelimiter type="start"/>
+        <FieldDelimiter type="end"/>
+      </Stack>
     </Stack>
   );
 }
